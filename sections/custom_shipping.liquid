@@ -1,0 +1,144 @@
+<style>
+  section.custom_ship h1.ship_title {
+      width: 100%;
+      font-family: 'raleway-medium';
+      text-align: center;
+      font-size: 30px;
+      margin-top: 30px;
+  }
+  section.custom_ship .shippara {
+    width: 70%;
+    margin: auto;
+  }
+  .shippara h5.ship_para {
+    font-size: 20px;
+    font-family: 'raleway-medium';
+    margin-top: 30px;
+  }
+  section.custom_ship .shippara p.ship_details {
+    margin-bottom: 25px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-family: roboto-regular;
+  }
+   section.custom_ship .accordion_container.new_fq {
+    width: 70%;
+    margin: auto;
+}
+ section.custom_ship .accordion_container.new_fq .accordion_body p {
+    margin: auto;
+    max-width: 98%;
+}
+  @media only screen and (max-width:767px) {
+    section.custom_ship .shippara {
+        width: 90%;
+        margin: auto;
+    }
+    section.custom_ship .accordion_container.new_fq {
+    width: 90%;
+    margin: auto;
+}
+    section.custom_ship .accordion_head span:first-child {
+    white-space: unset;
+}
+  }
+@media only screen and (min-width:768px) and (max-width:1024px){
+    section.custom_ship .shippara {
+        width: 90%;
+        margin: auto;
+    }
+     section.custom_ship .accordion_container.new_fq {
+    width: 90%;
+    margin: auto;
+  } 
+}
+  
+</style>
+<section class="custom_ship">
+  <div class="container">
+    <div class="row">
+      <h1 class="ship_title">{{ section.settings.titleship }}</h1>
+        {% for block in section.blocks %}
+          {% if block.type=='addtext' %}
+        <div class="shippara">
+        <h5 class="ship_para">{{ block.settings.titleship }}</h5>
+        <p class="ship_details">{{ block.settings.detailship }}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="row frequently_new">
+      
+      <div class="accordion_container new_fq">
+        {% for block in section.blocks %}
+          {% if block.type=='addfaq' %}
+        <div class="accordion_head">
+          <span>{{ block.settings.descript_tit }}</span>
+          <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+        </div>
+        <div class="accordion_body product-short-info  newdesign" style="display: none;">
+          <p class="add_description">{{ block.settings.adding_description }}</p>
+        </div>
+        {% endif% %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "shipping_policy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titleship",
+      "label": "Add Title"
+    }
+  ],
+  "blocks": [
+     {
+       "name":"Text",
+       "type": "addtext",
+       "settings": [
+         {
+           "type": "text",
+           "id": "titleship",
+           "label": "Add Title"
+         },
+         {
+           "type": "richtext",
+           "id": "detailship",
+           "label": "Add Text"
+         }
+       ]
+     },
+          {
+       "name":"Add Faq",
+       "type": "addfaq",
+       "settings": [
+                  {
+            "type": "text",
+            "id": "descript_tit",
+            "label": "Add Text"
+            },
+            {
+            "type": "richtext",
+            "id": "adding_description",
+            "label": "Add Text"
+            }
+       ]
+     }
+   ],
+   "presets": [
+{
+"name": "shipping_policy"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,77 @@
+<div class="section blog_ar_related">
+  <div class="contain">
+    <div class="related_header">
+      <p>{{ section.settings.header }}</p>
+    </div>
+    
+    <div class="related_articles">
+      <div class="grid blog_ar_row">
+        {% assign related_posts = "" %}
+
+        {% assign title =  article.title  %}
+
+        {% for article in blog.articles %}
+          {% if article.tags contains blog.handle %}
+            {% capture post %}
+        
+        <div class="grid-item rl_post_box {% if article.title == title %}remove_article{% endif %}">
+          <div class="related_box article_main">
+            <a href="{{ article.url }}">
+              <div class="inner_article">
+                <div class="article_top">
+                  <img src="{{ article.image | img_url: '' }}">
+                </div>
+                <div class="article_detail">
+                  <div class="article_title">
+                    <span>{{ article.title | truncate: 100 }}</span>
+                  </div>
+                  <div class="author_article">Blog By {{ article.author }}</div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+            {% endcapture %}
+          {% assign related_posts = related_posts | append:post %}
+          {% endif %}
+        {% endfor %}
+
+        {% if related_posts.size > 0 %}
+        {{ related_posts }}
+        {% else %}
+        <p class="error_posts col-md-12">No related posts!</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.remove_article').remove();
+</script>
+
+{% schema %}
+  {
+    "name": "Related Blogs",
+	"class": "related_blog_ar",
+    "settings": [
+		{
+			"type": "text",
+			"id": "header",
+			"label": "Add Heading"
+		}
+	],
+	"presets": [
+		{
+			"name": "Related Blogs"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

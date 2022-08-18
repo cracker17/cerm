@@ -1,0 +1,915 @@
+.about_im {
+    position: relative;
+}
+.standardsour_main {
+    display: flex;
+}
+.our_st {
+    text-align: center;
+    padding: 60px 0px;
+}
+.standardsour_text_img {
+    width: 50%;
+}
+.standardsour_im {
+    width: 50%;
+}
+.our_st_text {
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: normal;
+    font-family: 'roboto-regular';
+}
+.our_st_text_one {
+    letter-spacing: 0px;
+    color: #252525;
+    opacity: 1;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 600;
+    font-family: 'roboto-regular';
+  	margin-bottom: 30px;
+}
+.our_st p {
+    text-align: center;
+    letter-spacing: 0px;
+    color: #252525;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: normal;
+    font-family: 'roboto-regular';
+}
+.standardsour_head {
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: normal;
+    font-family: 'roboto-regular';
+}
+h6.standardsour_head_one {
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: none!important;
+    opacity: 1;
+    font-size: 24px;
+    line-height: 20px;
+    font-weight: 600;
+    font-family: 'roboto-regular';
+}
+.standardsour_text_img p {
+    letter-spacing: 0px;
+    color: #252525;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: normal;
+    font-family: 'roboto-regular';
+    max-width: 570px;
+}
+
+.logo_text_main {
+    display: flex;
+    max-width: 19% !important;
+    width: 100%;
+}
+h6.standardsour_head_one {
+    margin-bottom: 10px;
+}
+.standardsour_head {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+@media only screen and (min-width: 1600px) {
+  body#our_standards .our_st p {
+    max-width: 93%;
+  }
+  body#about-us .our_st p {
+    max-width: 93%;
+  }
+  h6.standardsour_head_one {
+    font-size: 30px;
+    line-height: 26px;
+  }	
+  .standardsour_head {
+    font-size: 45px;
+    line-height: 53px;
+  }
+  .our_st p {
+    font-size: 22px;
+    line-height: 35px;
+    max-width: 93%;
+    margin: 0 auto;
+  }
+  .our_st_text_one {
+    font-size: 30px;
+    line-height: 26px;
+  }
+  .our_st_text {
+    font-size: 45px;
+    line-height: 53px;
+  }
+  h3.title_text {
+    font-size: 50px;
+    line-height: 59px;
+  }
+  .standardsour_text_img p {
+    font-size: 22px;
+    line-height: 35px;
+  }
+  .standardsour_text_img p {
+    max-width: 87%;
+  }
+  .logo_text_one {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  h3.cerm_club_title_text {
+    font-size: 74px !important;
+    line-height: 87px !important;
+  }
+  body .logo_text_main:after {
+    width: 80px;
+    right: -30px;
+  }
+}
+
+.logo_text {
+    margin-top: 45px;
+}
+img.about_baner, img.standardsour_baner {
+    display: block;
+    width: 100%;
+}
+
+
+/* ----------- Custom responsive about us page CSS  -----------*/
+@media only screen and (max-width: 767px){
+  .standardsour_main {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .STANDARDS_new .standardsour_text_img {
+    width: 100% ;
+    padding: 20px 13px;
+  }
+  .STANDARDS_new .standardsour_text_img p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .STANDARDS_new h6.standardsour_head_one {
+    font-size: 18px;
+    font-family: 'roboto-regular';
+  }
+  .STANDARDS_new .standardsour_head {
+    font-size: 23px;
+  }
+  .STANDARDS_new .standardsour_head {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+  .OUR_STORY_new .our_st .our_st_text {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .OUR_STORY_new .our_st_text_one {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .OUR_STORY_new .our_st {
+    text-align: center;
+    padding: 40px 18px;
+    padding-bottom: 10px;
+  }
+  .OUR_STORY_new .our_st p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  #about-us .main-content {
+    padding-bottom: 20px;
+  }
+  .logo_txt.logo_text {
+    margin-top: 0px;
+  }
+
+  body#our_standards .STANDARDS_new .standardsour_head {
+    line-height: 33px;
+  }
+}
+/* ----------- Custom responsive about us page CSS  -----------*/
+@media only screen and ( min-width:769px){
+  img.about_baner_mobile {
+    display: none;
+  }
+}
+
+@media only screen and ( max-width: 768px ){
+  img.about_baner_mobile {
+    width: 100%;
+  }
+  img.about_baner {
+    display:none;
+  }
+  body#our_standards h3.title_text {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 22%;
+    font-size: 38px;
+  }
+  body#about-us h3.title_text {
+    left: 0;
+    width: 100%;
+    text-align: center;
+    top: 22%;
+    font-size: 38px;
+  }
+  body .STANDARDS_new .standardsour_im {
+    width: 100%;
+    padding: 20px 13px;
+    padding-bottom: 10px;
+  }
+  body .standardsour_text_img {
+    width: 100%;
+  }
+}
+
+img#arrow_col_2_cerem {
+    width: 16px;
+    height: 23px;
+    right: 5px;
+    top:42%;
+}
+img#arrow_col_1_cerem {
+    width: 16px;
+    height: 23px;
+    left:5px;
+    top:42%;
+}
+
+/* Brands Page css  */
+
+p.center_page_head {
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 0px;
+    font-family:'roboto-regular';
+    line-height: 70px;
+    color: #252525;
+    text-transform: uppercase;
+    opacity: 1;
+    padding-top:90px;
+    padding-bottom:75px;
+    background: #F8F8F8;
+}
+p.brand_bottom_txt {
+    text-align: center;
+    letter-spacing: 0px;
+    font-size: 50px;
+    padding-top: 24px;
+    font-family: 'roboto-regular';
+    color: #252525;
+    text-transform: none!important;
+    opacity: 1;
+    line-height: 59px;
+}
+
+.col-md-4.brand_icons img {
+    background: #153E35;
+    height: 240px;
+    width: 424px;
+}
+.Brands_section .row {
+    margin-top: 61px;
+}
+
+.col-md-4.brand_icons3 img {
+    background: #153E35;
+}
+.Brands_section {
+    text-align: center;
+}
+body#brands {
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 767px) {
+  .col-md-4.brand_icons img {
+    background: #153E35;
+    height: 173px;
+    width:306px;
+  }
+  .logo_txt .logo_text {
+    padding: 0!important;
+    margin: 0!important;
+  }
+  .about_baner_mobile {
+    width: 100%;
+  }
+  .logo_text_main {
+    display: flex !important;
+  }
+  .logo_text {
+    margin-bottom: 25px;
+  }
+  .col-md-4.brand_icons{
+    text-align:center;
+  }
+  p.brand_bottom_txt {
+    font-size: 33px;
+    line-height: 39px;
+    padding-top: 16px;
+    padding-bottom: 38px;
+  }
+  .Brands_section .row {
+    margin-top: 39px;
+  }
+  p.center_page_head {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  .formula_row img.icon_img {
+    margin-left: inherit;
+    margin-right: inherit;
+  }
+  .col-md-4.brand_icons1 {
+    order: 2;
+  }
+  .col-md-4.brand_icons2 {
+    order:1;
+  }
+  .col-md-4.brand_icons3 {
+    order: 3;
+  } 
+  .Brands_section .row .col-md-4 {
+    padding-right: unset;
+    padding-left: unset;
+  }
+  .row.brand_row {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .brand_row .col-md-4:last-child .brand_bottom_txt {
+    padding-bottom: 0;
+  }
+  p.center_page_head {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .standardsour_main.row {
+    margin: 0;
+  }
+  .logo_text_main img.logo_text_img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .logo_text_main .logo_text_one {
+    margin: 0;
+  }
+  .logo_text_main {
+    justify-content: center;
+    align-items: center;
+  }
+  .logo_txt .contain {
+    max-width: 90%;
+  }
+}
+
+/* 21/6/2022 */
+
+.container.brand_con {
+    padding-right: unset !important;
+    padding-left: unset !important;
+    max-width: 83% !important;
+}
+@media only screen and (min-width: 768px)  and (max-width: 1024px){
+  p.center_page_head {
+    font-size: 50px !important;
+  }
+  p.brand_bottom_txt {
+    font-size: 40px !important;
+  }
+}
+
+img.cerm_club_mobile {
+    display: none;
+}
+.detoxpoints_sec_new {
+    display: flex;
+    text-align: center;
+}
+.detoxpoints_sec {
+    width: 33%;
+    margin: 0 auto;
+}
+.detoxpoints_thrd {
+    width: 244px;
+}
+.detoxpoints_thrd {
+    width: 244px;
+    height: 244px;
+    background: #FFF0F5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 100%;
+}
+.detoxpoints_thrd {
+    margin: 0 auto;
+}
+img.cerm_club_image {
+    position: relative;
+}
+h3.cerm_club_title_text {
+    position: absolute;
+    top: 22%;
+    left: 3%;
+}
+h3.cerm_club_title_text {
+    position: absolute;
+    top: 50%;
+    left: 5.5%;
+    transform: translateY(-50%);
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: normal;
+    opacity: 1;
+    line-height: 87px;
+    font-family: 'roboto-regular';
+    margin-bottom: 0;
+}
+.about_im h3.title_text {
+    left: 5.5%;
+}
+.detoxpoints_im {
+    text-align: center;
+}
+.detoxpoints_text {
+    margin-top: 50px;
+}
+h3.detoxpoints_title_text {
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 45px;
+    font-weight: normal;
+    line-height: 53px;
+    font-family: 'roboto-regular';
+}
+.earn_points_pic {
+    width: 100%;
+    margin: 85px auto 0;
+    background: #faede5;
+    opacity: 1;
+}
+.earn_points_thrd {
+    width: 20%;
+    margin: 0 auto;
+}
+.earn_points_step {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+.earn_points_pic {
+    padding: 107px 0px;
+    padding-top: 60px;
+}
+.earn_points_pic {
+    text-align: center;
+}
+.earn_points_title_sec {
+/*     max-width: 171px; */
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.earn_points_main_title {
+    padding-bottom: 30px;
+    letter-spacing: 0px;
+    color: #252525;
+    font-size: 45px;
+    text-transform: none!important;
+    opacity: 1;
+    line-height: 53px;
+    font-weight: normal;
+    font-family: 'roboto-regular';
+}
+.earn_points_step {
+    margin-top: 82px;
+}
+.earn_points_step {
+    padding-right: 42px;
+    padding-left: 42px;
+}
+.earn_points_title_sec {
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: unset;
+    opacity: 1;
+    line-height: 27px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'roboto-regular';
+}
+.refer_a_friends_new {
+    display: flex;
+    max-width: 89%;
+    margin: 0 auto;
+    margin-top: 57px;
+    align-items: center;
+}
+h6.refer_a_friends_title {
+    margin-top: 20px;
+    letter-spacing: 0px;
+    color: #252525;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 53px;
+    font-family: 'roboto-regular';
+}
+.refer_a_friends_text {
+    padding: 30px 0px;
+}
+.refer_title {
+    letter-spacing: 0px;
+    color: #252525;
+    opacity: 1;
+    max-width: 762px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 60px;
+    margin-bottom: 20px;
+    font-family: 'roboto-regular';
+}
+.refer_a_friends_text p {
+    letter-spacing: 0px;
+    color: #252525;
+    opacity: 1;
+    font-size: 38px;
+    line-height: 42px;
+    margin-bottom: 0;
+    font-family: 'roboto-regular';
+}
+.frequently_new {
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/* New Corrections */
+
+.logo_text_main:last-child .logo_text_one {
+    border: 0;
+}
+html {
+    overflow-x: hidden;
+}
+.our_st p {
+    margin-bottom: 0;
+}
+.about_im h3.title_text {
+    transform: translateY(-50%);
+    margin-bottom: 0;
+    font-family: 'roboto-regular';
+}
+.logo_text_main {
+    position: relative;
+    justify-content: center;
+}
+.logo_text_main:after {
+    content: "";
+    height: 2px;
+    background: #707070;
+    opacity: 0.51;
+    width: 50px;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -20px;
+    top: 50%;
+}
+.logo_text_one {
+    border: 0 !important;
+    margin: 0;
+}
+.logo_text_main:last-child::after {
+    content: unset;
+}
+.logo_txt .logo_text {
+    padding: 42px 0;
+}
+.CERM_CLUB_new .cerm_im {
+    position: relative;
+}
+.logo_text {
+    padding: 42px 0px;
+}
+.logo_text_one {
+    margin: 0;
+    padding: 0;
+    border-right: 0;
+    padding-left: 15px;
+}
+.logo_text_main {
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+  h3.cerm_club_title_text {
+    font-size: 35px;
+    line-height: 41px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    bottom: 10%;
+    transform: unset;
+    top: unset;
+  }
+  .detox_head .box-title .title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .section.detox_rounded {
+    padding-top: 20px;
+  }
+  .title_subhead {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .detox_head h3.box-title {
+    margin-bottom: 0;
+  }
+  .rounded_inner p {
+    font-size: 17px;
+    line-height: 18px;
+  }
+  .rounded_inner {
+    width: 180px;
+    height: 180px;
+  }
+  .rounded_bottom p {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  .rounded_bottom {
+    margin-top: 25px;
+  }
+  .rounded_box {
+    margin-bottom: 40px;
+  }
+  .detox_rounded .row {
+    margin: 40px auto 0;
+  }
+  .point_button a {
+    font-size: 17px;
+  }
+  .point_button {
+    max-width: 220px;
+    min-height: 44px;
+  }
+}
+
+/* 1-7-22 */
+
+.widget-title.style_1.left.category_head {
+    margin-bottom: -19px;
+    padding-top: 20px;
+}
+p.category_title {
+    margin-top: -13px;
+}
+li.menu-lv-1.item a span:hover {
+    border: unset;
+    border-bottom: 2px solid black;
+    transition: 1s;
+}
+/* about us */
+body#about-us .our_st_text {
+    margin-bottom: 25px;
+}
+body#about-us .our_st p {
+    margin-bottom: 0;
+    margin-top: -17px;
+}
+body#about-us.logo_text {
+    margin-top: 22px;
+}
+
+/* our starndards */
+#our_standards .our_st_text {
+    margin-bottom: 25px;
+}
+body#our_standards .logo_text {
+    margin-top: 22px;
+}
+#our_standards .our_st_text_one {
+    margin-bottom: 28px;
+}
+@media only screen and (max-width: 767px) {
+  body#cerm_club .earn_points_title_sec {
+    font-size: 19px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  body#cerm_club .refer_a_friends_new .input-group {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body#cerm_club .earn_points_pic {
+    padding-bottom: 40px;
+  }
+  #cerm_club .earn_points_main_title {
+    max-width: 80%;
+    margin: auto;
+  }
+  #cerm_club .earn_points_pic .earn_points_step {
+    margin-top: 30px;
+  }
+  #cerm_club .detox_head h3.box-title {
+    margin-top: -22px;
+  }
+  .supplent_content a.btn_sup {
+    margin-left: 16px;
+  }
+  .row .widget-title span.title span {
+    font-size: 20px;
+    padding: 0 20px;
+  } 
+  .category_details p.category_title {
+    margin-top: -3px;
+  }
+  .category_head span.title span {
+    font-size: 21px;
+  }
+  .category_head h3.box-title {
+    padding-bottom: 10px;
+  }
+  body#our_standards .left h3.box-title {
+    margin-bottom: -57px;
+    margin-top: -80px;
+  }
+  body#our_standards .widget-title.style_1.left h3.box-title {
+    margin-top: -40px;
+    margin-bottom: -25px;
+  }
+  body#our_standards .contain .row.category_row {
+    padding-top: 9px;
+  }
+  body#about-us .left h3.box-title {
+    margin-bottom: -57px;
+    margin-top: -80px;
+  }
+  body#about-us .widget-title.style_1.left h3.box-title {
+    margin-top: -40px;
+    margin-bottom: -25px;
+  }
+  body#about-us .contain .row.category_row {
+    padding-top: 9px;
+  }
+  body#about-us .OUR_STORY_new .our_st p {
+    padding-top: 12px;
+    padding-bottom: 5px;
+  }
+  body#our_standards .OUR_STORY_new .our_st p {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    margin-top: -7px;
+  }
+  body#our_standards .our_st_text {
+    margin-bottom: 9px;
+  }
+  body#our_standards .our_st_text_one {
+    margin-bottom: 20px;
+  }
+  .video_player .section.video_box {
+    padding-top: 45px;
+    padding-bottom: 31px;
+  }
+  body#cerm-beauty main.main-content {
+    padding-bottom: 46px;
+  }
+  #brands main.main-content {
+    padding-bottom: 75px;
+  }
+  /*   #cerm-beauty h3.box-title {
+  padding-bottom: 10px;
+} */
+}
+
+/* 2-7-22 */
+
+h6.text_heading {
+    font-weight: normal;
+}
+.section.video_box {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+main.main-content {
+    padding-bottom: 60px;
+}
+#cerm_club .section.detox_rounded {
+    padding-top: 30px;
+}
+#cerm_club .earn_points_pic {
+    padding-bottom: 70px;
+}
+
+.hxoSelectTheme .buckscc-select span {
+    font-size: 12px;
+    margin-top: 2px;
+    padding: 5px!important;
+}
+
+.hxoSelectTheme .flagWrapper {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 30px;
+    display: none!important;
+}
+/*16.7.22*/
+/* .stamped-rewards-launcher .stamped-launcher-button {
+    background: linear-gradient(135deg, #f2b8cc, #f2b8cc) !important;
+}
+.stamped-rewards-window .stamped-rewards-background {
+    background: linear-gradient(135deg, #f2b8cc 0%, #f2b8cc 100%) !important;
+}
+.stamped-rewards-window .stamped-rewards-card {
+    box-shadow: 0 4px 15px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 10%), inset 0 2px 0 0 #f2b8cc !important;
+
+
+} */
+
+.contact-us-page .btn {   
+    border-color: #93532D!important;
+    background: #93532D!important;
+    color: #fff!important;
+}
+
+.contact-us-page .btn:hover{
+    background-color: #f0d1bf!important;
+    border-color: #f0d1bf!important;
+    color: #000!important;
+}
+
+.customer-content .btn-login {
+    border-color: #93532D!important;
+    background: #93532D!important;
+    color: #fff!important;
+   
+}
+
+.customer-content .btn-login:hover {
+    background-color: #f0d1bf!important;
+    border-color: #f0d1bf!important;
+    color: #000!important;
+}
+
+.customer-content .ct-register .btn-register:hover {
+    background-color: #f0d1bf!important;
+    border-color: #f0d1bf!important;
+    color: #000!important;
+}
+
+#dropdown-cart .btn.btn-continue {
+  border-color: #93532D!important;
+    background: #93532D!important;
+    color: #fff!important;
+}
+
+#dropdown-cart .btn.btn-continue:hover {
+ background-color: #f0d1bf!important;
+    border-color: #f0d1bf!important;
+    color: #000!important;
+}
+
+.zooomy__hhrt {
+ 
+    display: none!important;
+}
+
+section.custom_return .container h1.return_title {
+    display:none!important;
+}
+
+section.custom_return .returnpara h5.head_para {
+    font-size: 20px;
+    font-family: 'roboto-regular'!important;
+    margin-top: 30px;
+}

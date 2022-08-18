@@ -1,0 +1,92 @@
+<style>
+  section.custom_return .container h1.return_title {
+    width: 100%;
+    font-family: 'raleway-medium';
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+  section.custom_return .returnpara {
+    width: 70%;
+    margin: auto;
+}
+  section.custom_return .returnpara h5.head_para {
+    font-size: 20px;
+    font-family: 'raleway-medium';
+        margin-top: 30px;
+}
+     section.custom_return .returnpara p.return_details {
+    margin-bottom: 25px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-family: roboto-regular; 
+    }
+  @media only screen and (max-width:767px) {
+section.custom_return .returnpara {
+    width: 90% !important;
+    margin: auto;
+}
+    
+  }
+@media only screen and (min-width:768px) and (max-width:1024px){
+  section.custom_return .returnpara {
+    width: 90% !important;
+    margin: auto;
+}
+}
+  
+</style>
+<section class="custom_return">
+  <div class="container">
+    <div class="row">
+      <h1 class="return_title">{{ section.settings.titletitle }}</h1>
+        {% for block in section.blocks %}
+        <div class="returnpara">
+        <h5 class="head_para">{{ block.settings.titlereturn }}</h5>
+        <p class="return_details">{{ block.settings.detailreturn }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "return_policy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titletitle",
+      "label": "Add Title"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "return_policy",
+       "type": "return_policy",
+       "settings": [
+         {
+           "type": "text",
+           "id": "titlereturn",
+           "label": "Add Title"
+         },
+         {
+           "type": "richtext",
+           "id": "detailreturn",
+           "label": "Add Text"
+         }
+       ]
+     }
+   ],
+   "presets": [
+{
+"name": "return_policy"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

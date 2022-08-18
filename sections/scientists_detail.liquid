@@ -1,0 +1,90 @@
+<div class="section scientist_details">
+  <div class="contain">
+    <div class="st_header">
+      {% if section.settings.heading != blank %}
+      <p class="st_heading">{{ section.settings.heading }}</p>
+      {% endif %}
+      {% if section.settings.content != blank %}
+      <p class="st_content">{{ section.settings.content }}</p>
+      {% endif %}
+    </div>
+    <div class="details_section">
+      <div class="row desc_row">
+        {% for block in section.blocks %}
+        <div class="col-md-4">
+          <div class="smember">
+            <div class="smember-photo ">
+              {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '' }}">
+              {% endif %}
+              <div class="smember-icons py-4">
+              </div>
+            </div>
+            <div class="smember-info py-3">
+              {% if block.settings.name != blank %}
+              <p class="smember-name mb-1">{{ block.settings.name }}</p>
+              {% endif %}
+              {% if block.settings.details != blank %}
+              <span class="smember-role">{{ block.settings.details }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Scientists Detail",
+    "class": "scientist_section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Add Heading"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Add content"
+        }
+    ],
+    "blocks": [
+        {
+          "type": "detail",
+          "name": "Details",
+          "settings": [
+              {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Add image"
+              },
+              {
+                "type": "text",
+                "id": "name",
+                "label": "Add Name"
+              },
+              {
+                "type": "textarea",
+                "id": "details",
+                "label": "Add details"
+              }
+          ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "Scientists Detail"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

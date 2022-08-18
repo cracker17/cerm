@@ -1,0 +1,54 @@
+<div class="new_cols_section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {% if section.settings.box-title != blank %}
+        <div class="widget-title style_1 left">   
+          <h3 class="box-title">
+            <span class="title"> 
+              <span>{{ section.settings.box-title }}</span>
+            </span>
+          </h3>
+        </div>
+        {% endif %}
+        <div class="widget-product">
+          <div class="products-grid row">
+            {% for product in collections[section.settings.show_slider_featured_collection].products %}
+            <div class="grid-item">
+              {% render 'before-load-grid-item', product: product %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Featured Products New",
+    "settings": [
+		{
+			"type": "text",
+			"id": "box-title",
+			"label": "Add Title"
+		},
+		{
+            "type": "collection",
+            "id": "show_slider_featured_collection",
+            "label": "Collection to use"
+      	}	
+	],
+	"presets": [
+		{
+			"name": "Featured Products New"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

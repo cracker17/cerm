@@ -1,0 +1,59 @@
+<div class="section  formula_section">
+  <div class="contain">
+    <div class="cleanser_width">
+      <div class="formula_row">
+        {% for block in section.blocks %}
+        <div class="slide_formula">
+          <div class="inner_slide">
+            {% if block.settings.image != blank %}
+            <img class="icon_img" src="{{ block.settings.image | img_url: '' }}">
+            {% endif %}
+            {% if block.settings.text != blank %}
+            <p class="icon_content">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Formula Section",
+	"class": "cream_formula",
+    "settings": [
+	
+	],
+    "max_blocks": 5,
+	"blocks": [
+		{
+			"type": "block",
+			"name": "Formula",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Choose Image"
+				},
+				{
+					"type": "text",
+					"id": "text",
+					"label": "Add Text"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Formula Section"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

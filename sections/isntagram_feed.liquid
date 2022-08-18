@@ -1,0 +1,52 @@
+<div class="isntagram_feed">
+  <div class="contain">
+    <div class="isnta_head">
+      {% if section.settings.subhead != blank %}
+      <p class="subhead_isnta">{{ section.settings.subhead }}</p>
+      {% endif %}
+      {% if section.settings.isnta_id != blank %}
+      <div class="widget-title">   
+        <div class="box-title">
+          <span class="title"> 
+            <span>@</span>
+            <span>{{ section.settings.isnta_id }}</span>
+          </span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="insta_widget">
+      <div id="insta-feed"></div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Instagram Feed",
+	"class": "insta_feed",
+    "settings": [
+		{
+			"type": "text",
+			"id": "subhead",
+			"label": "Subheading"
+		},
+		{
+			"type": "text",
+			"id": "isnta_id",
+			"label": "Instagram Id Name"
+		}
+	],
+	"presets": [
+		{
+			"name": "Isntagram Feed"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

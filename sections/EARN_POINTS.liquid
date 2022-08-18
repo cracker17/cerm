@@ -1,0 +1,83 @@
+<div class="earn_points_new">
+  <div class="contain">
+    <div class="earn_points_pic">
+      <div class="earn_points_main_title">{{ section.settings.earn_points_title_div }}</div>
+      <div class="earn_points_step">
+        {% for block in section.blocks %}
+        <div class="earn_points_thrd">
+          {% if block.settings.earn_points_new != blank %}
+          <img class="earn_points_image" src="{{ block.settings.earn_points_new | img_url: '' }}">
+          {% endif %}
+          <div class="earn_points_title_sec">{{ block.settings.earn_points_div }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if section.settings.title != blank %}
+      <p class="bottom_title">{{ section.settings.title }}</p>
+      {% endif %}
+    </div>
+
+    <div class="benefits_points">
+      <p class="heading_benefits">{{ section.settings.heading }}</p>
+      <p class="subheading">{{ section.settings.subhead }}</p>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "EARN_POINTS",
+    "settings": [
+        {
+             "type": "text",
+             "id": "earn_points_title_div",
+             "label": "Add text" 
+        },
+        {
+             "type": "text",
+             "id": "title",
+             "label": "Add text" 
+        },
+        {
+             "type": "text",
+             "id": "heading",
+             "label": "Bottom Heading" 
+        },
+        {
+             "type": "text",
+             "id": "subhead",
+             "label": "Text" 
+        }
+	],
+    "max_blocks": 6,
+    "blocks": [
+        {
+          "type": "Seen",
+          "name": "EARN_POINTS",
+          "settings": [
+              {
+                "type": "image_picker",
+                "id": "earn_points_new",
+                "label": "Add image"
+              },
+              {
+                "type": "text",
+                "id": "earn_points_div",
+                "label": "Add Text"
+              }
+          ]
+        }
+    ],
+    "presets": [
+        {
+           "name": "EARN_POINTS"
+        }
+    ]
+
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

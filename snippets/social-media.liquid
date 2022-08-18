@@ -1,0 +1,98 @@
+{%- assign social_icons = false -%}
+
+{% if
+  settings.social_twitter_link != blank
+  or settings.social_facebook_link != blank
+  or settings.social_pinterest_link != blank
+  or settings.social_instagram_link != blank
+  or settings.social_tumblr_link != blank
+  or settings.social_rss_link != blank
+  or settings.social_snapchat_link != blank
+  or settings.social_youtube_link != blank
+  or settings.social_vimeo_link != blank
+  or settings.social_tiktok_link != blank
+  or template contains 'article'
+  or template contains 'blog'
+%}
+  {%- assign social_icons = true -%}
+{% endif %}
+
+{% if social_icons %}
+<ul class="social-icons">
+  {% if settings.social_facebook_link != blank %}
+  <li class="facebook">
+    <a href="{{ settings.social_facebook_link }}" title="Facebook" target="_blank">
+        <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/social_media_icons-03.png?v=1660535150">
+    </a>
+  </li>
+  {% endif %}
+  {% if settings.social_twitter_link != blank %}
+  <li class="twitter">
+    <a href="{{ settings.social_twitter_link }}" title="Twitter" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-twitter.png?v=1655466280">
+    </a>
+  </li>
+  {% endif %}
+  
+  {% if settings.social_google_plus_link != blank %}
+  <li class="google_plus">
+    <a href="{{ settings.social_google_plus_link }}" title="Google+" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-google-plus-g.png?v=1656587474">
+    </a>
+  </li>
+  {% endif %}
+  
+  {% if settings.social_instagram_link != blank %}
+  <li class="instagram">
+    <a href="{{ settings.social_instagram_link }}" title="Instagram" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/social_media_icons-02.png?v=1660535151">
+    </a>
+  </li>
+  {% endif %}
+  
+  {% if settings.social_pinterest_link != blank %}
+  <li class="pinterest">
+    <a href="{{ settings.social_pinterest_link }}" title="Pinterest" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-pinterest-p.png?v=1655466280">
+    </a>
+  </li>
+  {% endif %}
+     
+  {% if settings.social_tumblr_link != blank %}
+  <li class="tumblr">
+    <a href="{{ settings.social_tumblr_link }}" title="Tumblr" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-tumblr.png?v=1656587474">
+    </a>
+  </li>
+  {% endif %}
+  {% if settings.social_snapchat_link != blank %}
+  <li class="snapchat">
+    <a href="{{ settings.social_snapchat_link }}" title="Snapchat" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-snapchat-ghost.png?v=1656587474">
+    </a>
+  </li>
+  {% endif %}
+  {% if settings.social_youtube_link != blank %}
+  <li class="youtube">
+    <a href="{{ settings.social_youtube_link }}" title="YouTube" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/social_media_icons-01.png?v=1660535151">
+    </a>
+  </li>
+  {% endif %}
+  {% if settings.social_vimeo_link != blank %}
+  <li class="vimeo">
+    <a href="{{ settings.social_vimeo_link }}" title="Vimeo" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-vimeo-v.png?v=1656587474">
+    </a>
+  </li>
+  {% endif %}
+
+  {% if settings.social_tiktok_link != blank %}
+  <li class="tiktok">
+    <a href="{{ settings.social_tiktok_link }}" title="Tiktok" target="_blank">
+      <img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/social_media_icons-04.png?v=1660535151">
+    </a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}

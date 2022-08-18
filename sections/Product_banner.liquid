@@ -1,0 +1,80 @@
+<div class="section pr_bottom_banner">
+  <div class="bottom_wrap">
+    <div class="pr_images_side">
+      {% if section.settings.image != blank %}
+      <img class="only_desktop" src="{{ section.settings.image | img_url: '' }}">
+      {% endif %}
+      {% if section.settings.image_mob != blank %}
+      <img class="only_mobile" src="{{ section.settings.image_mob | img_url: '' }}">
+      {% endif %}
+    </div>
+    <div class="pr_content_side">
+      <div class="content_inner">
+        <p class="content_top">{{ section.settings.content }}</p>
+        <div class="content_pr_bt">
+          {% for block in section.blocks %}
+          <div class="pr_slide ct{{ forloop.index }}">
+            <div class="icon_bound">
+              <img class="icon_pr" src="{{ block.settings.icon | img_url: '45x45' }}">
+            </div>
+            <p class="formula_icon">{{ block.settings.content }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Banner",
+	"class": "pr_banner",
+    "settings": [
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Choose Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_mob",
+			"label": "Choose mobile image"
+		},
+		{
+			"type": "text",
+			"id": "content",
+			"label": "Add Content"
+		}
+	],
+	"blocks": [
+		{
+			"type": "slide",
+			"name": "Block",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "icon",
+					"label": "Choose Icon"
+				},
+				{
+					"type": "text",
+					"id": "content",
+					"label": "Add Text"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Product Banner"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

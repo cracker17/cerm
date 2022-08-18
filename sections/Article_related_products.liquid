@@ -1,0 +1,100 @@
+
+{%- if section.settings.show_pr -%}
+<div class="section ar_related">
+  <div class="contain">
+    <div class="cerm_bottom_heading">
+      {% if section.settings.box-title != blank %}
+      <div class="widget-title style_1 left">   
+        <div class="box-title">
+          <span class="title"> 
+            <span>{{ section.settings.box-title }}</span>
+          </span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="product_row main_cerm_products row product_row{{ forloop.index }}">  
+      {% assign related_posts = "" %}
+      
+      {% if article.tags.size > 0 %}             
+        {% for tag in article.tags %}
+          {%- for product in collections.all.products -%}
+            {% if product.title contains tag %}
+      
+      		{% capture post %}
+              <div class="col-md-3 grid-item product_single article_products">
+                <a href="{{ product.url }}">
+                  <div class="product_inner_width">
+                    <div class="product_top_cerm">
+                      <img src="{{ product.featured_image | img_url: '' }}">
+                      <div class="product-vendor">
+                        {{ product.vendor | link_to_vendor }}
+                      </div>
+                    </div>
+                    <div class="product_bottom_cerm">
+                      <div class="product_rating_wrap">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                     
+                      <div class="product_title_cerm">
+                        <span>{{ product.title }}</span>
+                      </div>
+                      <div class="product_price_cerm">
+                        <span>{{ product.price | money | split:'.' | first }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      		{% endcapture %}
+      		{% assign related_posts = related_posts | append:post %}		
+      
+            {% endif %}
+          {%- endfor -%}
+        {% endfor %}          
+      {% endif %}
+      
+      {% if related_posts.size > 0 %}
+        {{ related_posts }}
+        {% else %}
+        <p class="error_posts col-md-12">No related products!</p>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}
+  
+{% schema %}
+  {
+    "name": "Article Related Products",
+	"class": "article_recomend",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_pr",
+            "label": "Turn on related products",
+            "default": false
+        },
+		{
+			"type": "text",
+			"id": "box-title",
+			"label": "Add Title"
+		}
+	],
+	"presets": [
+		{
+			"name": "Article Related Products"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

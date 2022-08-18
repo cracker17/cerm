@@ -1,0 +1,11 @@
+<div class="collection-template collection-template-default {% if collection.template == 'brands_category' %}collection_brand{% endif %}">
+  <div class="contains sparq_chng {% if collection.template == 'brands_category' %}collection_brand{% endif %}">
+    {% render 'breadcrumb' %}
+    <div class="halo-collection-content">
+      <div class="row">
+      {% comment %}  {% endcomment %}  {% render 'sidebar-filter' %}
+        {% render 'collection-template-default' %}
+      </div>
+    </div>   
+  </div>
+</div>

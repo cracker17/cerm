@@ -1,0 +1,123 @@
+<div class="section image_with_slider" style="padding: {{ section.settings.pad_bt }}px 0px">
+  <div class="contain">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="text_block">
+          <h6 class="text_heading">{{ section.settings.heading }}</h6>
+          <div class="text_area_content">{{ section.settings.content }}</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="image_slider_main">
+          {% for block in section.blocks %}
+          <div class="slide_image_cerm slide{{ forloop.index }} {%- if block.settings.visibility == 'image' -%}show_imgs{% else %}show_vids{% endif %}">
+            <div class="images_capt">
+              {% if block.settings.desktop != blank %}
+              <img class="only_desktop" src="{{ block.settings.desktop | img_url: '' }}">
+              {% endif %}
+              {% if block.settings.mobile != blank %}
+              <img class="only_mobile" src="{{ block.settings.mobile | img_url: '' }}">
+              {% endif %}
+            </div>
+              
+            <div class="video_capt">
+              {% if block.settings.ds_video != blank %}
+              <video class="only_desktop" autobuffer autoplay loop muted playsinline style="width: 100%">
+                <source src="{{ block.settings.ds_video }}" type="video/mp4">
+              </video>
+              {% endif %}
+              {% if block.settings.mob_video != blank %}
+              <video class="only_mobile" autobuffer autoplay loop muted playsinline style="width: 100%">
+                <source src="{{ block.settings.mob_video }}" type="video/mp4">
+              </video>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with slider",
+	"class": "image_slider",
+    "settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Add Heading"
+		},
+		{
+			"type": "textarea",
+			"id": "content",
+			"label": "Add Content"
+		},
+		{
+			"type": "range",
+			"id": "pad_bt",
+			"label": "Section Padding",
+			"min": 10,
+			"max": 100,
+			"default": 20,
+			"unit": "px"
+		}
+	],
+	"blocks": [
+		{
+			"type": "slider",
+			"name": "Slide",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "desktop",
+					"label": "Choose image for desktop"
+				},
+				{
+					"type": "image_picker",
+					"id": "mobile",
+					"label": "Choose image for mobile"
+				},
+                {
+                    "type": "text",
+                    "id": "ds_video",
+                    "label": "Paste video link here"
+                },
+				{
+					"type": "text",
+					"id": "mob_video",
+					"label": "Mobile video link"
+				},
+                {
+                    "type": "select",
+                    "id": "visibility",
+                    "label": "Image Or Video",
+                    "options": [
+                      {
+                        "value": "image",
+                        "label": "Images"
+                      },
+                      {
+                        "value": "video",
+                        "label": "Videos"
+                      }
+                    ],
+                    "default": "image"
+                }
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Image with slider"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

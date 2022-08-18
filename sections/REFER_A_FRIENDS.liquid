@@ -1,0 +1,56 @@
+<div class="refer_a_friends_new">        
+  <div class="refer_pic">
+    <img class="refer_a_friends_image" src="{{ section.settings.refer_a_friends_new | img_url:'master'}}"/>      
+  </div> 
+  <div class="refer_a_friends_text">
+    <div class="refer_inner">
+      <div class="refer_title">{{ section.settings.refer_a_friends }}</div> 
+      <div class="refer_a_friends_para">{{ section.settings.refer_a_friends_para }}</div>
+      <a class="refer_btn" href="{{ section.settings.url }}">{{ section.settings.label }}</a>
+    </div>
+  </div> 
+</div>
+{% schema %}
+  {
+    "name": "REFER_A_FRIENDS",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "refer_a_friends_new",
+            "label": "Add image"
+        },
+        {
+            "type": "text",
+            "id": "refer_a_friends",
+            "label": "Add text"
+        },
+        {
+            "type": "richtext",
+            "id": "refer_a_friends_para",
+            "label": "Add text"
+        },
+        {
+            "type": "text",
+            "id": "label",
+            "label": "Button Label"
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Paste Link Here"
+        }
+
+  ],
+  "presets": [
+      {
+          "name": "REFER_A_FRIENDS"
+      }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

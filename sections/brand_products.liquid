@@ -1,0 +1,27 @@
+<div class="product-collection {{ rows }} row"> 
+    {% for product in collection.products %}
+    <div class="grid-item {{ grid_item_width }} {% if settings.product_image_border%}grid-item-border {% endif %}">
+        {% render 'product_new_grid' with product as product, serial: forloop.index %}
+    </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Brand Products",
+    "settings": [
+		
+	],
+	"presets": [
+		{
+			"name": "Brand Products"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

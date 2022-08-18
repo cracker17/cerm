@@ -1,0 +1,31 @@
+<div class="section article_blog">
+  <div class="contain">
+    <div class="breadcrumb_new">
+    {% comment %}  {% render 'breadcrumb_new' %} {% endcomment %}
+    </div>
+    <div class="fetch_blog_article_data">
+     {{ article.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Article Section",
+	"class": "article_data",
+    "settings": [
+		
+	],
+	"presets": [
+		{
+			"name": "Article Section"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

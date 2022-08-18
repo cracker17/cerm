@@ -1,0 +1,495 @@
+<div class="section faq_new">
+  <div class="contain">
+    <div class="page_tit"><p>Frequently Asked Questions</p></div>
+    <div class="main_faq_page">
+      <div class="que_sidebar">
+        <div class="qa_side_part">
+          <div class="heading_faq">FAQ</div>
+          <div class="faq_navs_bar">
+            {% if section.settings.nav1 != blank %}
+              <div class="faq_nav fq_nav1 active_nav" data-target=".qa_nav_first"><p>{{ section.settings.nav1 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav2 != blank %}
+              <div class="faq_nav fq_nav2" data-target=".qa_nav_second"><p>{{ section.settings.nav2 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav3 != blank %}
+              <div class="faq_nav fq_nav3" data-target=".qa_nav_third"><p>{{ section.settings.nav3 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav4 != blank %}
+              <div class="faq_nav fq_nav4" data-target=".qa_nav_fourth"><p>{{ section.settings.nav4 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav5 != blank %}
+              <div class="faq_nav fq_nav5" data-target=".qa_nav_fifth"><p>{{ section.settings.nav5 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav6 != blank %}
+              <div class="faq_nav fq_nav6" data-target=".qa_nav_sixth"><p>{{ section.settings.nav6 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav7 != blank %}
+              <div class="faq_nav fq_nav7" data-target=".qa_nav_seven"><p>{{ section.settings.nav7 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav8 != blank %}
+              <div class="faq_nav fq_nav8" data-target=".qa_nav_eight"><p>{{ section.settings.nav8 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav9 != blank %}
+              <div class="faq_nav fq_nav9" data-target=".qa_nav_nine"><p>{{ section.settings.nav9 }}</p></div>
+            {% endif %}
+            {% if section.settings.nav10 != blank %}
+              <div class="faq_nav fq_nav10" data-target=".qa_nav_ten"><p>{{ section.settings.nav10 }}</p></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="main_qa_block">
+        <div class="side_block_heading">TOP QUESTIONS</div>
+        <div class="que_ans_side">
+
+        
+          {% if section.settings.nav1 != blank %}
+          <div class="qa_nav_first nav_blocks active_block">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='first' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav2 != blank %}
+          <div class="qa_nav_second nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='second' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav3 != blank %}
+          <div class="qa_nav_third nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='third' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav4 != blank %}
+          <div class="qa_nav_fourth nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='fourth' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav5 != blank %}
+          <div class="qa_nav_fifth nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='fifth' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav6 != blank %}
+          <div class="qa_nav_sixth nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='sixth' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav7 != blank %}
+          <div class="qa_nav_seven nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='seven' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav8 != blank %}
+          <div class="qa_nav_eight nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='eight' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav9 != blank %}
+          <div class="qa_nav_nine nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='nine' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if section.settings.nav10 != blank %}
+          <div class="qa_nav_ten nav_blocks">
+            <div class="accordion_container faq_section">
+              {% for block in section.blocks %}
+                {% if block.settings.descript_tit != blank %}
+                  {% if block.type=='ten' %}
+                  <div class="accordion_head">
+                    <span>{{ block.settings.descript_tit }}</span>
+                    <span class="plusminus"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_awesome-chevron-down.png?v=1658231725"></span>
+                  </div>
+                  <div class="accordion_body product-short-info  newdesign" style="display: none;">
+                    <p class="add_description">{{ block.settings.adding_description }}</p>
+                  </div>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "FAQ Section",
+    "class": "faq_section",
+    "settings": [
+        {
+          "type": "text",
+          "id": "nav1",
+          "label": "Add Nav First",
+          "info": "First block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav2",
+          "label": "Add Nav Second",
+          "info": "Second block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav3",
+          "label": "Add Nav Third",
+          "info": "Third block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav4",
+          "label": "Add Nav Fourth",
+          "info": "Fourth block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav5",
+          "label": "Add Nav Fifth",
+          "info": "Fifth block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav6",
+          "label": "Add Nav Sixth",
+          "info": "Sixth block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav7",
+          "label": "Add Nav Seventh",
+          "info": "Seventh block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav8",
+          "label": "Add Nav Eighth",
+          "info": "Eighth block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav9",
+          "label": "Add Nav Ninth",
+          "info": "Ninth block heading"
+        },
+        {
+          "type": "text",
+          "id": "nav10",
+          "label": "Add Nav Tenth",
+          "info": "Tenth block heading"
+        }
+    ],
+    "blocks": [
+        {
+           "name":"Add First Block QA",
+           "type": "first",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Second Block QA",
+           "type": "second",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Third Block QA",
+           "type": "third",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Fourth Block QA",
+           "type": "fourth",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Fifth Block QA",
+           "type": "fifth",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Sixth Block QA",
+           "type": "sixth",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Seven Block QA",
+           "type": "seven",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Eight Block QA",
+           "type": "eight",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Nine Block QA",
+           "type": "nine",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        },
+        {
+           "name":"Add Ten Block QA",
+           "type": "ten",
+           "settings": [
+              {
+                  "type": "text",
+                  "id": "descript_tit",
+                  "label": "Add Text"
+              },
+              {
+                  "type": "richtext",
+                  "id": "adding_description",
+                  "label": "Add Text"
+              }
+           ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "FAQ Section"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

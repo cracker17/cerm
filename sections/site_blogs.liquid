@@ -1,0 +1,56 @@
+<div class="section blog_templates">
+  
+  <div class="search_blogs">
+    {% render 'search-bar-05' %}
+  </div>
+  
+  <div class="contain">
+    {% paginate blog.articles by limit %}
+    <div class="content-blog blog-fullWidth">
+      <div class="list-blog row row_wrap">    
+        {% for article in blog.articles %}
+        <div class="col-md-4 article_main">
+          <a href="{{ article.url }}">
+            <div class="inner_article">
+              <div class="article_top">
+                <img src="{{ article.image | img_url: '' }}">
+              </div>
+              <div class="article_detail">
+                <div class="article_title">
+                  <span>{{ article.title | truncate: 100 }}</span>
+                </div>
+                <div class="author_article">Blog By {{ article.author }}</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% if paginate.pages > 1 %}
+      {% render 'pagination' paginate: paginate %}
+      {% endif %}
+    </div>
+    {% endpaginate %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Blogs",
+	"class": "blog_site",
+    "settings": [
+
+	],
+	"presets": [
+		{
+			"name": "Blogs"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

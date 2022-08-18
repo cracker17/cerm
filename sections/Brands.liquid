@@ -1,0 +1,57 @@
+<div class="Brands_section">
+  <p class="center_page_head">{{ section.settings.text}}</p>
+<div class="container brand_con">
+<div class="row brand_row">
+{% for block in section.blocks %}
+<div class="col-md-4 brand_icons{{ forloop.index }}">
+  {% if block.settings.img_col %}
+<img src="{{ block.settings.img_col | img_url:'master' }}"/>
+  {% endif %}
+  <p class="brand_bottom_txt">{{ block.settings.text2 }}</p>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Brands Section",
+    "settings": [
+{
+"type":"text",
+"id":"text",
+"label":"Add Text"
+}
+],
+"blocks":[
+{
+"name":"Add Your Brand",
+"type":"image",
+"settings":[
+{
+"type":"image_picker",
+"id":"img_col",
+"label":"Add Image"
+},
+{
+"type":"text",
+"id":"text2",
+"label":"Add Text"
+}
+]
+}
+],
+"presets":[
+{
+"name":"Brands Section"
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

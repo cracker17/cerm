@@ -1,0 +1,12 @@
+<div class="section article_blog">
+  <div class="contain">
+    <div class="breadcrumb_new">
+    {% comment %}  {% render 'breadcrumb_new' %} {% endcomment %}
+    </div>
+    {% for article in blog.articles %}
+    <div class="fetch_blog_article_data">
+     {{ article.content }}
+    </div>
+    {% endfor %}
+  </div>
+</div>

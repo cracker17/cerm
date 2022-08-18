@@ -1,0 +1,50 @@
+<div class="section blog_start">
+  {% if section.settings.content != blank %}
+  <div class="blog_inner">
+    <div class="content_banner_blog">
+      <span>{{ section.settings.content }}</span>
+    </div>
+  </div>
+  {% endif %}
+  <div class="contain">
+    <div class="banner_bottom_content">
+      <p class="text_bottom">{{ section.settings.bottom_text }}</p>
+      <p class="learn_us">{{ section.settings.learn }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Blog Banner",
+	"class": "blog_banner_new",
+    "settings": [
+		{
+			"type": "text",
+			"id": "content",
+			"label": "Add Heading"
+		},
+		{
+			"type": "text",
+			"id": "bottom_text",
+			"label": "Add Content"
+		},
+		{
+			"type": "text",
+			"id": "learn",
+			"label": "Add Subhead"
+		}
+	],
+	"presets": [
+		{
+			"name": "Blog Banner"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

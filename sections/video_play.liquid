@@ -1,0 +1,48 @@
+<div class="section video_box">
+  <div class="contain">
+    {% if section.settings.heading != blank %}
+    <div class="video_heading">
+      <p>{{ section.settings.heading }}</p>
+    </div>
+    {% endif %}
+    {% if section.settings.video != blank %}
+    <div class="video_cerm">
+      <div class="vid_back">
+        <video unmuted autobuffer loop playsinline controls style="width: 100%">
+          <source src="{{ section.settings.video }}" type="video/mp4" >
+        </video>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Video Play",
+	"class": "video_player",
+    "settings": [
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Add Heading"
+		},
+		{
+			"type": "text",
+			"id": "video",
+			"label": "Video Link"
+		}
+	],
+	"presets": [
+		{
+			"name": "Video Play"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

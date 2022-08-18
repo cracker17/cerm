@@ -1,0 +1,39 @@
+<div class="about_im">
+  <img class="about_baner" src="{{section.settings.leftimg | img_url:'master'}}"/>
+   <img class="about_baner_mobile" src="{{section.settings.leftimg_new | img_url:'master'}}"/>
+     <h3 class="title_text">{{ section.settings.sub_title }}</h3>
+</div>
+
+{% schema %}
+{
+"name": "about_image",
+"settings": [
+{
+    "type": "image_picker",
+    "id": "leftimg",
+    "label": "Add image"
+},
+{
+    "type": "image_picker",
+    "id": "leftimg_new",
+    "label": "Add image"
+},
+{
+    "type": "text",
+    "id": "sub_title",
+    "label": "Add text"
+}
+],
+"presets": [
+                    {
+                       "name": "about_image"
+                    }
+                  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

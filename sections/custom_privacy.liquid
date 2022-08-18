@@ -1,0 +1,87 @@
+<style>
+section.custom_privacy h1.privacy_title {
+    width: 100%;
+    font-family: 'raleway-medium';
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+  section.custom_privacy .privacypara {
+    width: 70%;
+    margin: auto;
+}
+ section.custom_privacy .privacypara h5.head_para {
+    font-size: 20px;
+    font-family: 'raleway-medium';
+    margin-top: 30px;
+}
+  @media only screen and (max-width:767px) {
+section.custom_privacy .privacypara {
+    width: 90%;
+    margin: auto;
+}
+    
+  }
+@media only screen and (min-width:768px) and (max-width:1024px){
+section.custom_privacy .privacypara {
+    width: 90%;
+    margin: auto;
+}
+ 
+}
+  
+</style>
+<section class="custom_privacy">
+  <div class="container">
+    <div class="row">
+      <h1 class="privacy_title">{{ section.settings.ptitletitle }}</h1>
+        {% for block in section.blocks %}
+        <div class="privacypara">
+        <h5 class="head_para">{{ block.settings.titleprivacy }}</h5>
+        <p class="privacy_details">{{ block.settings.detailprivacy }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "return_policy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ptitletitle",
+      "label": "Add Title"
+    }
+  ],
+  "blocks": [
+     {
+       "name": "privacy_policy",
+       "type": "privacy_policy",
+       "settings": [
+         {
+           "type": "text",
+           "id": "titleprivacy",
+           "label": "Add Title"
+         },
+         {
+           "type": "richtext",
+           "id": "detailprivacy",
+           "label": "Add Text"
+         }
+       ]
+     }
+   ],
+   "presets": [
+{
+"name": "privacy_policy"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,87 @@
+<div class="form-contact form_community">     
+  <div class="form-heading">
+    <h3 class="title">
+      {% render 'multilang' with section.settings.form_title%}
+    </h3>
+    <p>
+      {% render 'multilang' with section.settings.form_subtitle %}
+    </p>  
+  </div>
+  
+  {% form 'contact' %}
+
+  {% comment %}
+  Successful message
+  {% endcomment %}
+
+  {% if form.posted_successfully? %}
+  <p class="note form-success" {% if settings.enable_multilang %}data-translate="contact.form.post_success"{% endif %}>
+    {{ 'contact.form.post_success' | t }}
+  </p>
+  {% endif %}
+
+  {{ form.errors | default_errors }}
+
+  <div id="contactFormWrapper">          
+    <div class="first_details">
+      <div class="form-group expert_group">
+        <label for="contactFormName">
+          <span {% if settings.enable_multilang %}data-translate="contact.form.name"{%endif%}>
+            First Name*
+          </span>
+        </label>
+        <input type="text" id="contactFormName" name="contact[name]" autocapitalize="words" placeholder="{{ section.settings.contact_your_name }}">
+      </div>
+  
+      <div class="form-group expert_group">
+        <label for="contactFormlastname">
+          <span {% if settings.enable_multilang %}data-translate="contact.form.name"{%endif%}>
+            Last Name*
+          </span>
+        </label>
+        <input type="text" id="contactFormlastName" name="contact[lastname]" autocapitalize="words" placeholder="{{ section.settings.contact_your_last_name }}">
+      </div>
+    </div>
+
+    <div class="form-group expert_group">
+      <label for="contactFormEmail">
+        <span {% if settings.enable_multilang %}data-translate="contact.form.email"{%endif%}>
+          Email Address*
+        </span>
+        <em>*</em>
+      </label>
+      <input type="email" name="contact[email]" id="contactFormEmail" autocorrect="off" autocapitalize="off" placeholder="{{ section.settings.contact_your_email }}">
+    </div>
+
+    <div class="form-group expert_group">
+      <label for="contactFormOrganisation">
+        <span {% if settings.enable_multilang %}data-translate="Organisation"{%endif%}>
+          Organisation*
+        </span>
+      </label>
+      <input type="text" name="contact[Organisation]" id="contactFormOrganisation" placeholder="{{ section.settings.contact_Organisation }}">
+    </div>
+
+    <div class="form-group expert_group">
+      <label for="contactFormBiography">
+        <span {% if settings.enable_multilang %}data-translate="Biography"{%endif%}>
+          Biography (LinkedIn, University Profile etc)*
+        </span>
+      </label>
+      <input type="text" name="contact[Biography]" id="contactFormBiography" placeholder="{{ section.settings.contact_Biography }}">
+    </div>
+    
+    <div class="form-group expert_group">
+      <label for="contactFormMessage">
+        <span {% if settings.enable_multilang %}data-translate="contact.form.message"{%endif%}>
+          Message*
+        </span>
+        <em>*</em>
+      </label>
+      <textarea rows="8" name="contact[body]" id="contactFormMessage" {% if settings.enable_multilang %}data-translate="contact.form.placeholder_message" translate-item="placeholder"{%endif%} placeholder=""></textarea>
+    </div>
+
+    <input type="submit" class="btn community_btn" {% if settings.enable_multilang %}data-translate="contact.form.submit_contact"{%endif%} value="{{ 'contact.form.submit_contact' | t }}">
+  </div>
+  {% endform %}
+</div>

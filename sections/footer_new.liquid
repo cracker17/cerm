@@ -1,0 +1,160 @@
+<footer class="footer_new aa">
+  <div class="section cerm_footer">
+    <div class="contain">
+      <div class="row footer_row">
+        <div class="col-md-5">
+          <div class="footer_left social_news">
+            {% for block in section.blocks %}
+            {% if block.type == 'news' %}
+            <div class="newsletter_block">
+              <div class="newsletter_new">
+                <div class="heading_news">{{ block.settings.heading }}</div>
+                <p class="content_news">{{ block.settings.content }}</p>
+              </div>
+              <div class="newsletter_box">
+                {% include 'newsletter-form-block' %}
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% for block in section.blocks %}
+            {% if block.type == 'Social' %}
+            <div class="social_media_icon">
+              <div class="follow_social">{{ block.settings.follow }}</div>
+              {% render 'social-media' %}
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="footer_navigation">
+            {% for block in section.blocks %}
+            {% if block.type == 'navbar' %}
+            <div class="footer_nav nav{{ forloop.index }}">
+              <div class="nav_top">
+                <p class="nav_header">
+                  <a href="{{ block.settings.header_link }}">
+                    <span>{{ block.settings.header_text }}</span>
+                  </a>
+                </p>
+              </div>
+              <div class="nav_bottom">
+                <nav class="nav_menu_custom mobile_menu_nav">
+                  <ul class="list-menu list-menu--inline  list_section_mobile" role="list">
+                    {%- for link in linklists[block.settings.menu].links -%}
+                      <li class="new_custom_menu {{ link.title }}">
+                        <a class="header_menu_custom menu_item_custom" href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+                          {{ link.title }}
+                        </a>
+
+                        {%- if link.links != blank -%}
+                          <ul>
+                            {%- for child_link in link.links -%}
+                              <li>
+                                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                                  {{ child_link.title }}
+                                </a>
+
+                                {%- if child_link.links != blank -%}
+                                  <ul>
+                                    {%- for grandchild_link in child_link.links -%}
+                                      <li>
+                                        <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                                          {{ grandchild_link.title }}
+                                        </a>
+                                      </li>
+                                    {%- endfor -%}
+                                  </ul>
+                                {%- endif -%}
+
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="footer_last">
+        
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+{% schema %}
+  {
+    "name": "Footer",
+	"class": "footer_new",
+    "settings": [
+	
+	],
+	"blocks": [
+		{
+			"type": "news",
+			"name": "Newsletter",
+			"settings": [
+				{
+					"type": "text",
+					"id": "heading",
+					"label": "Heading"
+				},
+				{
+					"type": "text",
+					"id": "content",
+					"label": "Content"
+				}
+			]
+		},
+		{
+			"type": "Social",
+			"name": "Social Media Icons",
+			"settings": [
+				{
+					"type": "text",
+					"id": "follow",
+					"label": "Add Text"
+				}
+			]
+		},
+		{
+			"type": "navbar",
+			"name": "Menu",
+			"settings": [
+				{
+					"type": "text",
+					"id": "header_text",
+					"label": "Menu Title"
+				},
+				{
+					"type": "url",
+					"id": "header_link",
+					"label": "Title Link"
+				},
+				{
+                    "type": "link_list",
+                    "id": "menu",
+                    "default": "main-menu",
+                    "label": "Choose Menu"
+                }
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

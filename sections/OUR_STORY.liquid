@@ -1,0 +1,41 @@
+<div class="contain">
+  <div class="our_st">
+    <div class="our_st_text">{{ section.settings.story }}</div>
+    <div class="our_st_text_one">{{ section.settings.story_text }}</div>
+    <p class="our_st_para">{{ section.settings.story_para }}</p>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "OUR_STORY",
+    "class": "OUR_STORY_new",
+    "settings": [
+{
+    "type": "text",
+    "id": "story",
+    "label": "Add text"
+},
+{
+    "type": "text",
+    "id": "story_text",
+    "label": "Add text"
+},
+{
+    "type": "richtext",
+    "id": "story_para",
+    "label": "Add text"
+}
+],
+"presets": [
+                    {
+                       "name": "OUR_STORY"
+                    }
+                  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

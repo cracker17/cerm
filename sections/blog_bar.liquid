@@ -1,0 +1,50 @@
+<div class="nav_blog">
+  <div class="nav_wrap">
+    {% for block in section.blocks %}
+    <div class="navs_blog blog{{ forloop.index }}">
+      <a href="{{ block.settings.nav_url }}">
+        <span>{{ block.settings.label }}</span>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Blog Bar",
+	"class": "blog_bar",
+    "settings": [
+		
+	],
+	"blocks": [
+		{
+			"type": "nav",
+			"name": "Blog",
+			"settings": [
+				{
+					"type": "text",
+					"id": "label",
+					"label": "Blog Name"
+				},
+				{
+					"type": "url",
+					"id": "nav_url",
+					"label": "Nav Link"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Blog Bar"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

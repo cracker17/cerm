@@ -1,0 +1,40 @@
+<div class="cerm_im">
+  <img class="cerm_club_image" src="{{ section.settings.cermimg | img_url: '' }}"/>
+  <img class="cerm_club_mobile" src="{{ section.settings.cermimg_new | img_url: '' }}"/>
+  <h3 class="cerm_club_title_text">{{ section.settings.cerm_title }}</h3>
+</div>
+
+{% schema %}
+{
+"name": "CERM_CLUB",
+"class": "CERM_CLUB_new",
+"settings": [
+    {
+        "type": "image_picker",
+        "id": "cermimg",
+        "label": "Add image" 
+    },
+    {
+        "type": "image_picker",
+        "id": "cermimg_new",
+        "label": "Add image mobile"
+    },
+    {
+        "type": "text",
+        "id": "cerm_title",
+        "label": "Add text"
+    }
+],
+"presets": [
+    {
+        "name": "CERM_CLUB"
+    }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

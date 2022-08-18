@@ -1,0 +1,92 @@
+<div class="section home_product_cat detox_rounded">
+  <div class="contain">
+    {% if section.settings.title != blank %}
+    <div class="widget-title style_1 left category_head">   
+      <div class="box-title">
+        <span class="title"> 
+          <span >{{ section.settings.title }}</span>
+        </span>
+      </div>
+    </div>
+    {% endif %}
+    <div style="margin-top: 70px;" class="row category_row">
+      {% for block in section.blocks %}
+      <div class="col-md-3">
+        <a href="{{ block.settings.link }}">
+          <div class="category_box">
+            <div class="category_image">
+              {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '' }}">
+              {% endif %}
+            </div>
+            <div class="category_details">
+              {% if block.settings.title != blank %}
+              <p class="category_title">
+                <span class="cat_title">{{ block.settings.title }}</span>
+                <span class="title_icon"><img src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_ionic-ios-arrow-round-forward_3.png?v=1658378120"></span>
+              </p>
+              {% endif %}
+              {% if block.settings.content != blank %}
+              <p class="cat_content">{{ block.settings.content }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Categories",
+	"class": "pr_category",
+    "settings": [
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "block",
+			"name": "Category",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Choose Image"
+				},
+				{
+					"type": "text",
+					"id": "title",
+					"label": "Title"
+				},
+				{
+					"type": "text",
+					"id": "content",
+					"label": "Content"
+				},
+				{
+					"type": "url",
+					"id": "link",
+					"label": "Add Category Link"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Product Categories"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

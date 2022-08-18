@@ -1,0 +1,73 @@
+<div class="section ex_banner">
+  <div class="contain">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="detail_ex">
+          {% if section.settings.ex_name != blank %}
+          <p class="ex_name">{{ section.settings.ex_name }}</p>
+          {% endif %}
+          {% if section.settings.heading != blank %}
+          <p class="ex_heading">{{ section.settings.heading }}</p>
+          {% endif %}
+          {% if section.settings.description != blank %}
+          <div class="ex_description">{{ section.settings.description }}</div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="picture_ex">
+          {% if section.settings.image != blank %}
+          <img class="only_desktop" src="{{ section.settings.image | img_url: '' }}">
+          {% endif %}
+          {% if section.settings.image_mob != blank %}
+          <img class="only_mobile" src="{{ section.settings.image_mob | img_url: '' }}">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Our Experts",
+    "class": "expert_banner",
+    "settings": [
+        {
+          "type": "text",
+          "id": "ex_name",
+          "label": "Subheading"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Choose Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Choose image for mobile"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Our Experts"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

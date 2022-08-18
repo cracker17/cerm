@@ -1,0 +1,112 @@
+<div class="section detox_rounded">
+  <div class="contain">
+    {% if section.settings.detoxpoints_title != blank %}
+    <div class="widget-title style_1 left detox_head">   
+      <div class="box-title">
+        <span class="title"> 
+          <span>{{ section.settings.detoxpoints_title }}</span>
+        </span>
+      </div>
+    </div>
+    {% endif %}
+    {% if section.settings.subhead != blank %}
+    <p class="title_subhead">{{ section.settings.subhead }}</p>
+    {% endif %}
+    
+    <div class="row s">
+      {% for block in section.blocks %}
+      <div class="col-md-3">
+        <div class="rounded_box">
+          {% if block.settings.image != blank %}
+          <img class="rounded_text_image" src="{{ block.settings.image | img_url: '' }}">
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+<!--       <img class="bg_rounded_img only_mobile" src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Path_672.png?v=1655964892">
+      <img class="bg_rounded_desk only_desktop" src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Mask_Group_22.png?v=1656310921">
+      <img class="bg_rounded_second only_desktop" src="https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Mask_Group_23.png?v=1656310921"> -->
+    </div>
+    
+    {% if section.settings.btn != blank %}
+    <div class="point_button">
+      <a href="{{ section.settings.btn_url }}">{{ section.settings.btn }}</a>
+    </div>
+    {% endif %}
+    {% if section.settings.member != blank %}
+    <p class="already_member">{{ section.settings.member }}</p>
+    {% endif %}
+    {% if section.settings.label != blank %}
+    <a class="log_member" href="{{ section.settings.url }}">{{ section.settings.label }}</a>
+    {% endif %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "DETOXPOINTS",
+  "class": "DETOXPOINTS_new",
+  "settings": [
+        {
+            "type": "text",
+            "id": "detoxpoints_title",
+            "label": "Add text" 
+        },
+        {
+            "type": "text",
+            "id": "subhead",
+            "label": "Add Subtext" 
+        },
+        {
+            "type": "text",
+            "id": "btn",
+            "label": "Button Label" 
+        },
+        {
+            "type": "url",
+            "id": "btn_url",
+            "label": "Button Link" 
+        },
+        {
+            "type": "text",
+            "id": "member",
+            "label": "Add Text" 
+        },
+        {
+            "type": "text",
+            "id": "label",
+            "label": "Points Button" 
+        },
+        {
+            "type": "url",
+            "id": "url",
+            "label": "Paste link" 
+        }
+  ],
+  "blocks": [
+    {
+      "type": "Seen",
+      "name": "color_div",
+      "settings": [
+			{
+               "type": "image_picker",
+                "id": "image",
+                "label": "Choose icon"
+            }
+      ]
+  	}
+  ],
+  "presets": [
+      {
+          "name": "DETOXPOINTS"
+      }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

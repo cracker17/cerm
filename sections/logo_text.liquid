@@ -1,0 +1,47 @@
+<div class="contain">
+  <div class="logo_text">
+    {% for block in section.blocks %}
+    <div class="logo_text_main">
+      <img class="logo_text_img" src="{{block.settings.logo_t_im | img_url:'master'}}"/>
+      <div class="logo_text_one">{{ block.settings.logo_t_text }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "logo_text",
+  	"class": "logo_txt",
+    "settings": [
+],
+  "blocks": [
+    {
+    "type": "Seen",
+    "name": "logo_text",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_t_im",
+            "label": "Add image"
+        },
+        {
+            "type": "text",
+            "id": "logo_t_text",
+            "label": "Add Text"
+        }
+]
+  }],
+"presets":[
+{
+   "name":"logo_text"
+}
+]
+  
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

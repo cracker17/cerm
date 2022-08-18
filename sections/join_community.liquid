@@ -1,0 +1,51 @@
+<div class="section community_news">
+  <div class="contain">
+    <div class="main_news">
+      <div class="row">
+        <div class="col-md-6 contact_detail">
+          <div class="grow_community">
+            {% if section.settings.heading != blank %}
+            <p class="grow_heading">{{ section.settings.heading }}</p>
+            {% endif %}
+            {% if section.settings.content != blank %}
+            <p class="grow_content">{{ section.settings.content }}</p>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6">
+          {% render 'newsletter_join_community' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Community",
+    "class": "our_community",
+    "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Add Heading"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Add content"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Community"
+        }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

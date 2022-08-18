@@ -1,0 +1,66 @@
+<div class="contain">
+  <div class="standardsour_main row">
+    <div class="col-md-6 standardsour_text_img">
+      <div class="standardsour_head">{{ section.settings.standardsour }}</div>
+      <h6 class="standardsour_head_one">{{ section.settings.standardsour_in_text }}</h3>
+      <p class="standardsour_para">{{ section.settings.standardsour_para_in }}</p>
+      {% if section.settings.btn_label != blank %}
+      <a class="banner_button" href="{{ section.settings.btnlink }}">{{ section.settings.btn_label }}</a>
+      {% endif %}
+    </div>
+    <div class="col-md-6 standardsour_im">
+      <img class="standardsour_baner" src="{{section.settings.standardsour_in_img | img_url:''}}"/>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "STANDARDS",
+    "class": "STANDARDS_new",
+    "settings": [
+
+{
+    "type": "text",
+    "id": "standardsour",
+    "label": "Add text"
+},
+{
+    "type": "text",
+    "id": "standardsour_in_text",
+    "label": "Add text"
+},
+{
+    "type": "richtext",
+    "id": "standardsour_para_in",
+    "label": "Add text"
+},
+{
+    "type": "text",
+    "id": "btn_label",
+    "label": "Button Label"
+},
+{
+    "type": "url",
+    "id": "btnlink",
+    "label": "Add link"
+},
+{
+    "type": "image_picker",
+    "id": "standardsour_in_img",
+    "label": "Add image"
+}
+],
+"presets": [
+                    {
+                       "name": "STANDARDS"
+                    }
+                  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

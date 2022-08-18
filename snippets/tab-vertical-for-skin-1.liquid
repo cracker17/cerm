@@ -1,0 +1,93 @@
+<div class="tabs__product-page vertical-tabs">
+  <div class="wrapper-tab-content">
+    
+    {% if section.settings.display_custom_tab_1 %}
+      <div class="tab-title">
+        <a href="#" data-tapTop data-target="#collapse-tab3" class="tab-links">
+          {% render 'multilang' with section.settings.custom_tab_title_1 %}
+        </a>
+      </div>
+      <div class="tab-content first_tabuler" data-TabContent id="collapse-tab3">
+              <div>
+                  {{ product.metafields.custom.product_details.value }}
+              </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.display_custom_tab_2 %}
+      <div class="tab-title">
+        <a href="#" data-tapTop data-target="#collapse-tab4" class="tab-links">
+          {% render 'multilang' with section.settings.custom_tab_title_2 %}
+        </a>
+      </div>
+      <div class="tab-content second_tabuler" data-TabContent id="collapse-tab4">
+          {% if product.metafields.c_f.custom_tab2 != blank %}
+              <div>
+                  {{ product.metafields.custom.product_use.value }}
+              </div>
+          {% else %}
+              <div>
+                  {{ product.metafields.custom.product_use.value }}
+              </div>
+          {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.display_custom_tab_3 %}
+      <div class="tab-title">
+        <a href="#" data-tapTop data-target="#collapse-tab5" class="tab-links">
+          {% render 'multilang' with section.settings.custom_tab_title_3 %}
+        </a>
+      </div>
+      <div class="tab-content" data-TabContent id="collapse-tab5">
+          {% if product.metafields.c_f.custom_tab3 != blank %}
+              <div>
+                  {{ product.metafields.custom.product_ingredients.value }}
+              </div>
+          {% else %}
+              <div>
+                  {{ product.metafields.custom.product_ingredients.value }}
+              </div>
+          {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.display_custom_tab_4 %}
+      <div class="tab-title">
+        <a href="#" data-tapTop data-target="#collapse-tab6" class="tab-links">
+          {% render 'multilang' with section.settings.custom_tab_title_4 %}
+        </a>
+      </div>
+      <div class="tab-content" data-TabContent id="collapse-tab6">
+          {% if product.metafields.c_f.custom_tab4 != blank %}
+              <div>
+                  {{ product.metafields.custom.the_science.value }}
+              </div>
+          {% else %}
+              <div>
+                  {{ product.metafields.custom.the_science.value }}
+              </div>
+          {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.display_custom_tab_5 %}
+      <div class="tab-title">
+        <a href="#" data-tapTop data-target="#collapse-tab7" class="tab-links">
+          {% render 'multilang' with section.settings.custom_tab_title_5 %}
+        </a>
+      </div>
+      <div class="tab-content" data-TabContent id="collapse-tab7">
+     {% if product.metafields.c_f.custom_tab5 != blank %}
+              <div>
+                  {{ product.metafields.custom.how_to_video }}
+              </div>
+          {% else %}
+              <div>
+                  {{ product.metafields.custom.how_to_video }}
+              </div>
+          {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>

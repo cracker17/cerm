@@ -1,0 +1,91 @@
+<div class="section banner_top">
+  <div class="contain">
+    <div class="slideshow_enable">
+      {% for block in section.blocks %}
+      <div class="slide_banner slide{{ forloop.index }}">
+        <div class="slide_images">
+          {% if block.settings.image_desk != blank %}
+          <img class="only_desktop" src="{{ block.settings.image_desk | img_url: '' }}">
+          {% endif %}
+          {% if block.settings.image_mob != blank %}
+          <img class="only_mobile" src="{{ block.settings.image_mob | img_url: '' }}">
+          {% endif %}
+        </div>
+        <div class="banner_content">
+          <div class="slide_wrap_inner">
+            <div class="fix_ct_slide">
+              {% if block.settings.heading != blank %}
+              <p class="heading">{{ block.settings.heading }}</p>
+              {% endif %}
+              {% if block.settings.content != blank %}
+              <p class="content">{{ block.settings.content }}</p>
+              {% endif %}
+              {% if block.settings.label != blank %}
+              <a class="banner_button" href="{{ block.settings.url }}">{{ block.settings.label }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Banner Slideshow",
+	"class": "banner_slider",
+    "settings": [
+
+	],
+	"blocks": [
+		{
+			"type": "banner",
+			"name": "Slide",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image_desk",
+					"label": "Choose Image"
+				},
+				{
+					"type": "image_picker",
+					"id": "image_mob",
+					"label": "Choose Image for mobile"
+				},
+				{
+					"type": "text",
+					"id": "heading",
+					"label": "Heading"
+				},
+				{
+					"type": "text",
+					"id": "content",
+					"label": "Content"
+				},
+				{
+					"type": "text",
+					"id": "label",
+					"label": "Button Label"
+				},
+				{
+					"type": "url",
+					"id": "url",
+					"label": "Paste button link here"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Banner Slideshow"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

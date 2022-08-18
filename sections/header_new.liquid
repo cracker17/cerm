@@ -1,0 +1,258 @@
+{% render 'style-header-06' %}
+<link rel="preload" href="{{ 'header-06.css' | asset_url }}" as="style">
+
+<header class="latest_header">
+  <div class="main_header_navs">
+    <div class="header_upper">
+      {% for block in section.blocks %}
+      {% if block.type == 'announce' %}
+      {% if block.settings.announce != blank %}
+      <div class="announce_text" style="background: {{ block.settings.color_bg }}">
+        <p>{{ block.settings.announce }}</p>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="header_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="header-panel-bt middle_wrap">
+            <div class="ccy_convertor only_desk_ccy">
+              <div class="doubly-wrapper"></div>
+            </div>
+            
+            <div class="header-panel-bt-wrap header_logo_new">
+              <div class="mb-area header-bottom-left">
+                <div class="header-logo">
+                  <a class="logo-img active" href="/" title="Logo" data-load-page="">
+                    {% if section.settings.site_logo != blank %}
+                    <img itemprop="logo" data-src="" src="{{ section.settings.site_logo | img_url: '' }}" alt="cermbeauty" style="max-width: {{ section.settings.logo_width }}px" class="" data-sizes="auto">
+                    {% endif %}
+                  </a>
+                </div></div>
+            </div>
+            
+            <div class="header-bottom-right">
+              {% if settings.enable_search %}
+              <div class="nav-search">                    
+                {% render 'search-bar-05' %}
+                <div class="search-mb svg-mb hidding_middle">
+                  <a href="#" title="Search Icon" class="icon-search" data-search-mobile-toggle>
+                    {% render 'icon-search' %}
+                  </a>
+                  <a href="javascript:void(0)" title="close" class="close close-search" style="display: none">
+                    {% render 'icon-close' %}
+                  </a>
+                  {% comment %}{% render 'search-bar' %} {% endcomment %}
+                </div>
+              </div>
+              {% endif %}
+              <div class="header_icons">
+                {% if shop.customer_accounts_enabled %}
+                  <div class="customer-links">
+                    {% if customer %}
+                    <a class="acc-links text-hover acc-logout" id="customer_logout_link" href="{{ routes.account_logout_url }}" {% if settings.enable_multilang %}data-translate="layout.customer.log_out"{% endif %}>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmS20XjDTNnS1fuCuI__17RpaTtuZvgCU37nG_jNc7fg&s" style="width:30px; margin-top:-10px;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                    <span>  </span>
+                    <a class="acc-links text-hover acc-title" href="{{ routes.account_url }}"{% if settings.enable_multilang %} data-translate="customer.account.title"{% endif %}>
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="lnr-user" viewBox="0 0 1024 1024" width="100%" height="100%"><title>user</title><path class="path1" d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"></path><path class="path2" d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"></path></svg>
+                    </a>
+                    
+                    {% else %}  
+                    
+                    <a data-user-mobile-toggle class="acc-links text-hover acc-sign-in" id="customer_login_link" href="{{ routes.account_login_url }}" {% if settings.enable_multilang %}data-translate="customer.login.login"{% endif %}>
+                                            {% render 'icon-user' %}
+                    </a>
+                   
+                    {% endif %}                                   
+                  </div>
+                {% endif %}
+
+                {% if settings.enable_wishlist %}
+                  <div class="nav-wishlist">
+                    <a class="wishlist pr_wishlist" href="/pages/wishlist" title="{{ 'wishlist.general.my_wishlist' | t }}">
+                      {% render 'icon-heart-2' %}
+                      <span>{{ 'wishlist.general.my_wishlist_2' | t }}</span>
+                      <div class="countPill wishlist-quantity" data-wishlist-count></div>
+                    </a>
+                  </div>
+                {% endif %}
+
+                <div class="wrapper-top-cart">
+                  <div class="cart-icon-05 svg-mb-05" data-cart-header-05>
+                         <a href="javascript:void(0)" title="Cart" class="cart-icon wrap_cart_home" data-cart-toggle>
+                          {% render 'icon-cart-2' %}
+                          <span class="cartCount" data-cart-count>
+                              {{ cart.item_count }}
+                          </span>
+                        </a>                  
+                  </div>
+                </div>
+
+
+                {% if section.settings.ask_an_expert or section.settings.contact_us %}
+                <div class="live_help">
+                  <div class="live-wrapper-icon">
+                    {% render 'icon-phone' %}
+                  </div>
+                  <div class="live_help_group">
+                    <div class="live_help_group_wrap">
+                      {% if section.settings.ask_an_expert %}
+                        <div class="live-ask-an-expert">
+                         {% if section.settings.ask_an_expert_title != blank %}
+                            <h4>{{ section.settings.ask_an_expert_title }}</h4>
+                         {% endif %}
+                         {% if section.settings.ask_an_expert_desc != blank %}
+                            <p class="desc">{{ section.settings.ask_an_expert_desc }}</p>
+                         {% endif %}
+                         {% if section.settings.ask_an_expert_button != blank %}
+                            <a class="btn" href="javascript:void(0)" data-toggle="modal" data-target="#ask_an_expert" title="{{ section.settings.ask_an_expert_button }}">{% if section.settings.ask_an_expert_button_icon != blank %}{{ section.settings.ask_an_expert_button_icon }}{% endif %} {{ section.settings.ask_an_expert_button }}</a>
+                         {% endif %}
+                         {% if section.settings.ask_an_expert_text != blank %}
+                            <span class="text">{{ section.settings.ask_an_expert_text }}</span>
+                         {% endif %}
+                        </div>
+                      {% endif %}
+                      
+                      {% if section.settings.contact_us %}
+                        <div class="live-contact-us">
+                          {% if section.settings.contact_us_title != blank %}
+                            <h4>{{ section.settings.contact_us_title }}</h4>
+                         {% endif %}
+                         {% if section.settings.contact_us_desc != blank %}
+                            <p class="desc">{{ section.settings.contact_us_desc }}</p>
+                         {% endif %}
+                         {% if section.settings.contact_us_button != blank %}
+                            <a class="btn" href="{{ section.settings.contact_us_link }}" title="{{ section.settings.contact_us_button }}">{{ section.settings.contact_us_button }}</a>
+                         {% endif %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="header-bottom-midle site_menus ff only_desktop_menu">
+      <div class="top-text-close">
+        <a href="#" class="icon-nav close-menu-mb" title="Menu Mobile Icon" data-menu-mb-toogle>
+          <span class="icon-line"></span>
+        </a>
+      </div>
+      <nav class="nav-bar" role="navigation">
+        {% render 'site-nav' %}
+      </nav>
+
+   
+
+    </div>
+    
+    <div class="mobile_nav_new">
+      <div class="inner_small">
+        <div class="header-bottom-midle site_menus ff only_desktop_menu only_mobile_show">
+          <div class="top-text-close">
+            <a class="close_nav_icon">
+              <svg aria-hidden="true" data-prefix="fal" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-times fa-w-10 fa-2x"><path fill="currentColor" d="M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z" class=""></path></svg>
+              <span>Close</span>
+            </a>
+          </div>
+          <nav class="nav-bar" role="navigation">
+            {% render 'site-nav' %}
+          </nav>
+
+          {% if shop.customer_accounts_enabled %}
+          <div class="customer-links">
+            {% if customer %}
+            <a class="acc-links text-hover acc-logout" id="customer_logout_link" href="{{ routes.account_logout_url }}" {% if settings.enable_multilang %}data-translate="layout.customer.log_out"{% endif %}>
+              {{ 'layout.customer.log_out' | t }}
+            </a>
+            <span> / </span>
+            <a class="acc-links text-hover acc-title" href="{{ routes.account_url }}"{% if settings.enable_multilang %} data-translate="customer.account.title"{% endif %}>
+              {{ 'customer.account.title' | t }}
+            </a>
+
+            {% else %}  
+
+            <a class="acc-links text-hover acc-sign-in" id="customer_login_link" href="{{ routes.account_login_url }}" {% if settings.enable_multilang %}data-translate="customer.login.login"{% endif %}>
+              {% render 'icon-user-2' %}
+              {{ 'customer.login.login' | t }}
+            </a>
+
+            {% endif %}                                   
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+//   var itemLocation = $('.header-06 .item-location .wrapper-icon');
+//   var langCurrencyGroups = $('.header-06 .item-location .lang-currency-groups');
+    
+//   window.dropdowncart_type = "{{ section.settings.dropdowncart_type }}";
+</script>
+{% schema %}
+  {
+    "name": "Header New",
+	"class": "header_new",
+    "settings": [
+		{
+			"type": "image_picker",
+			"id": "site_logo",
+			"label": "Choose Logo"
+		},
+		{
+            "type": "range",
+            "id": "logo_width",
+            "min":  100,
+            "max":  250,
+            "step":  5,
+            "unit": "px" ,
+            "label": "Logo Width",
+            "default":  100
+		},      
+        {
+            "type": "link_list",
+            "id": "horizontal_linklist",
+            "label": "Menu",
+            "default": "main-menu"
+        }
+	],
+	"blocks": [
+		{
+			"type": "announce",
+			"name": "Announcement Bar",
+			"settings": [
+				{
+					"type": "color",
+					"id": "color_bg",
+					"label": "Background"
+				},
+				{
+					"type": "text",
+					"id": "announce",
+					"label": "Announcement Text"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

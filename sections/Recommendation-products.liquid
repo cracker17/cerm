@@ -1,0 +1,157 @@
+<div class="section pr_related">
+  <div class="contain">
+    <div class="cerm_pr">
+      {% if section.settings.box-title != blank %}
+      <div class="widget-title style_1 left">   
+        <div class="box-title">
+          <span class="title"> 
+            <span>{{ section.settings.box-title }}</span>
+          </span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    
+    <div
+         class="product-recommendations"
+         data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+         >
+      {%- if recommendations.performed and recommendations.products_count > 0 -%}
+
+      <div class="product_row main_cerm_products row product_row product_recomend">
+        {%- for product in recommendations.products -%}
+        <div class="col-md-3 grid-item product_single reccomend_pdf_pr">
+          <a href="{{ product.url }}">
+            <div class="product_inner_width">
+              <div class="product_top_cerm">
+                <img src="{{ product.featured_image | img_url: '' }}">
+                
+              </div>
+              <div class="product_bottom_cerm">
+{% comment %}                 <div class="product_rating_wrap">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div> {% endcomment %}
+                <div class="product_title_cerm">
+                  <span>{{ product.title }}</span>
+                </div>
+                <div class="product-vendor">
+                  {{ product.vendor | link_to_vendor }}
+                </div>
+                <div class="product_price_cerm">
+                  <span>{{ product.price | money | split:'.' | first }}</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+    </div>
+    
+  </div>
+</div>
+
+<script>
+//   $(document).ready(function(){
+//     var checkexist = setInterval(function(){
+//       if($('.product_recomend').length){
+//         console.log("check")
+
+//         if("$('.product_recomend .product_single').length" < '4'){
+//           $('.product_recomend').css("justify-content", "unset");
+//         }else if("$('.product_recomend .product_single').length" >= '4'){
+//           $('.product_recomend').css("justify-content", "space-between");
+// 		}
+
+//         clearInterval(checkexist);
+//       }
+
+//     }, 100);
+//   })
+</script>
+{% schema %}
+  {
+    "name": "Recommendation Products",
+	"class": "recommend_pr",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_pr",
+            "label": "Turn on product recommendations",
+            "default": false
+        },
+		{
+			"type": "text",
+			"id": "box-title",
+			"label": "Add Heading"
+		}
+	],
+	"presets": [
+		{
+			"name": "Recommendation Products"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+
+{% javascript %}
+  const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+
+$(document).ready(function(){
+      var checkexist = setInterval(function(){
+        if($('.product-recommendations').length){
+          console.log("slick")
+
+          
+
+          clearInterval(checkexist);
+        }
+      }, 100); 
+    });
+
+if (window.matchMedia("(max-width: 768px)").matches) {
+            $('.product_recomend').slick({
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              arrows: true,
+              infinite: true,
+              prevArrow:"<img class='slick-prev' src='https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_ionic-ios-arrow-back_efba46b5-26b4-46c7-9367-d279f85348c1.png?v=1656308592'>",
+              nextArrow:"<img class='slick-next' src='https://cdn.shopify.com/s/files/1/0631/1870/4856/files/Icon_ionic-ios-arrow-back-1_30cc347c-ca2e-48f4-8e94-9da89b58fedf.png?v=1656308592'>"
+            });
+          }
+{% endjavascript %}
